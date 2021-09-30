@@ -60,10 +60,12 @@ def allData():
     query="select * from CollegeDetails;"
     curr.execute(query)
     vals=curr.fetchall()
+    X=[]
     for val in vals:
+        X.append([(fernet.decrypt(val[0].encode())).decode('utf-8'),(fernet.decrypt(val[1].encode())).decode('utf-8')])
         print((fernet.decrypt(val[0].encode())).decode('utf-8'))
     conn.commit();
-    return render_template('index.html')
+    return render_template('database.html', vals=X)
 if __name__ == "__main__":
         app.run(debug=True,port=8998)
         
