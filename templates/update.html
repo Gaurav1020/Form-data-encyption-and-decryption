@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>{{A[1]}}</p>
+    <div>
+        <form method="post" autocomplete="off" action="{{ url_for("update")}}">
+            <label for=name>Full Name</label><br>
+            <input type=text name="name" id=name placeholder="Full Name" required value={{A[0]}}><br>
+            <label for=addr>Address</label><br>
+            <textarea id="addr" name="addr" rows="4" cols="50" placeholder="Enter Address here" required >{{A[3]}}</textarea><br>
+            <label for="phone">Phone Number</label><br>
+            <input type="text" name="phone" id="phone" placeholder="+91XXXXXXXXXX" required value={{A[4]}}><br><br>
+            <button type="submit">update</button>
+        </form>
+    </div>
+</body>
+</html>
